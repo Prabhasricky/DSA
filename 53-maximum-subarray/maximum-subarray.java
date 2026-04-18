@@ -1,8 +1,8 @@
 class Solution {
     public int maxSubArray(int[] nums) {
+        
         int currentSum = nums[0];
         int maxSum = nums[0];
-
         for(int i=1; i<nums.length; i++){
 
             if(currentSum < 0){
@@ -11,7 +11,7 @@ class Solution {
                 currentSum += nums[i];
             }
 
-            if(currentSum > maxSum){
+            if(maxSum < currentSum){
                 maxSum = currentSum;
             }
         }
